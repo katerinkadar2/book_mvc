@@ -1,0 +1,5 @@
+C:\Users\dargevich\Downloads\MvcPaging-master\MvcPaging-master\src\MvcPaging\bin\Debug\MvcPaging.dll
+C:\Users\dargevich\Downloads\MvcPaging-master\MvcPaging-master\src\MvcPaging\bin\Debug\MvcPaging.pdb
+C:\Users\dargevich\Downloads\MvcPaging-master\MvcPaging-master\src\MvcPaging\obj\Debug\MvcPaging.csprojResolveAssemblyReference.cache
+C:\Users\dargevich\Downloads\MvcPaging-master\MvcPaging-master\src\MvcPaging\obj\Debug\MvcPaging.dll
+C:\Users\dargevich\Downloads\MvcPaging-master\MvcPaging-master\src\MvcPaging\obj\Debug\MvcPaging.pdb

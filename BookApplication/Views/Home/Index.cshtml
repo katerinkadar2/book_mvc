@@ -1,0 +1,39 @@
+﻿@model BookApplication.Models.ListModel
+@{
+    ViewBag.Title = "Книги";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* using @(Html.BeginForm("Index","Home", FormMethod.Post)) *@
+@using (Html.BeginForm("Index", "Home"))
+{
+<fieldset>
+    <div class="display-label">
+        Поиск по названию книги: @* @Html.DisplayNameFor(model => model.Name)*@
+    </div>
+    <div class="display-field">
+       @* @Html.DisplayFor(model => model.Name)*@
+        @Html.EditorFor(model => model.Name) 
+    </div>
+</fieldset>
+        <table class="submitbut">
+                            <tr>
+                                <td style="width: 50%;">
+                                    <input type="submit" value="Найти"  name="btnSearch" />
+                                </td>
+                                <td style="width: 50%;">
+                                    @Html.ActionLink("Создать книгу", "Create")
+                                </td>
+                            </tr>
+                        </table>
+
+}
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+    <div id="gridcontainer">
+   @Html.Partial("_BookGrid", Model.Result)
+    </div>
+  

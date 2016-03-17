@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BookApplication.Models.Book>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@{ 
+    //var grid = new System.Web.Helpers.WebGrid(Model, new List<string>() { "Title" }, canPage: true, rowsPerPage: 20, defaultSort: "OrderId", sortDirectionFieldName: "DESC");
+    // var grid = new System.Web.Helpers.WebGrid(Model, canPage: true, canSort: true, rowsPerPage: 20, defaultSort: "OrderId", sortDirectionFieldName: "DESC");
+    var grid = new System.Web.Helpers.WebGrid(defaultSort: "Name", ajaxUpdateContainerId: "gridcontainer", sortDirectionFieldName: "DESC", rowsPerPage: 10);
+    grid.Bind(Model, rowCount: ViewBag.TotalOrdersCount, autoSortAndPage: true);
+    grid.Pager(WebGridPagerModes.NextPrevious);
+}
+<div id="grid">
+    @grid.GetHtml(tableStyle: "grid",
+                headerStyle: "head",columns: grid.Columns(
+     grid.Column("Название", format: @<text>@Html.ActionLink((string)item.Name, "Edit", new { id = item.Id }, null)</text>),
+     grid.Column("PublishYear", "Год публикации", style: "column"),
+     grid.Column("Author", "Автор", style: "column"),
+     grid.Column("Удалить", format: @<text>@Html.ActionLink("Удалить", "Delete", new { id = item.Id }, null)</text>)
+
+
+            )
+)
+
+
+</div>

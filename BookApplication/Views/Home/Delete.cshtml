@@ -1,0 +1,39 @@
+﻿@model BookApplication.Models.Book
+
+@{
+    ViewBag.Title = "Удалить";
+}
+
+<h2>Delete</h2>
+
+<h3>Вы уверены, что вы хотите это удалить?</h3>
+<fieldset>
+    <legend>Книга</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PublishYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Вернуться к списку", "Index")
+    </p>
+}
